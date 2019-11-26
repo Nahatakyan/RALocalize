@@ -1,0 +1,69 @@
+//
+//  LocalizableButton.swift
+//  RALocalize
+//
+//  Created by Ruben Nahatakyan on 11/26/19.
+//  Copyright © 2019 Ruben Nahatakyan. All rights reserved.
+//
+
+import UIKit
+
+open class LocalizableButton: UIButton {
+
+    // MARK: - Properties
+    private var localizableTitles = NSMutableDictionary()
+    
+    open override var isSelected: Bool {
+        didSet {
+            languageChanged()
+        }
+    }
+    
+    open override var isHighlighted: Bool {
+        didSet {
+            languageChanged()
+        }
+    }
+    
+    // MARK: - Init
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        startupSetup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        startupSetup()
+    }
+}
+
+// MARK: - Startup default setup
+private extension LocalizableButton {
+    @objc func startupSetup() {
+        addObservers()
+
+        if let title = self.currentTitle {
+            setTitle(title, for: state)
+        }
+    }
+
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .ApplicationLanguageChanged, object: nil)
+    }
+
+    @objc func languageChanged() {
+        let savedState = localizableTitles.allKeys.first { $0 as? String == "\(self.state.rawValue)" } as? String
+        let currentState = savedState ?? "\(UIControl.State.normal.rawValue)"
+        let state = UIControl.State(rawValue: UInt(currentState) ?? 0)
+        let title = localizableTitles.value(forKey: currentState) as? String ?? ""
+        super.setTitle(title.localized(), for: state)
+    }
+}
+
+// MARK: - Public methods
+extension LocalizableButton {
+    override open func setTitle(_ title: String?, for state: UIControl.State) {
+        localizableTitles.setValue(title, forKey: "\(state.rawValue)")
+        languageChanged()
+    }
+}

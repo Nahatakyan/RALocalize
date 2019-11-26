@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
  
   spec.name         = "RALocalize"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "iOS realtime localization framework written on swift"
 
   spec.homepage     = "https://github.com/Nahatakyan/RALocalize"
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "10"
   spec.swift_version = "5"
 
-  spec.source        = { :git => "https://github.com/Nahatakyan/RALocalize.git", branch => "master", :tag => "#{spec.version}" }
+  spec.source        = { :git => "https://github.com/Nahatakyan/RALocalize.git", :tag => "#{spec.version}" }
   spec.source_files  = "RALocalize", "RALocalize/**/*.{h,m,swift}"
 
 end

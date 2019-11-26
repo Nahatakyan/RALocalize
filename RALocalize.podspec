@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
  
   spec.name         = "RALocalize"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "iOS realtime localization framework written on swift"
 
   spec.description  = <<-DESC
@@ -16,6 +16,6 @@ This CocoaPods library helps you perform calculation.
   spec.swift_version = "5"
 
   spec.source        = { :git => "https://github.com/Nahatakyan/RALocalize.git", :tag => "#{spec.version}" }
-  spec.source_files  = "RALocalize/**/*.{h,m,swift}"
+  spec.source_files  = "RALocalize", "RALocalize/**/*.{h,m,swift}"
 
 end

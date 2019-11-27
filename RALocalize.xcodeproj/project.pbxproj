@@ -20,12 +20,12 @@
 		C29116E0238D858900995C0E /* RALocalize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RALocalize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29116E3238D858900995C0E /* RALocalize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RALocalize.h; sourceTree = "<group>"; };
 		C29116E4238D858900995C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2911716238D8B5A00995C0E /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
-		C2911718238D8BD500995C0E /* RALocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RALocale.swift; sourceTree = "<group>"; };
-		C2911737238D916000995C0E /* Public properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Public properties.swift"; sourceTree = "<group>"; };
-		C291173A238D9D4900995C0E /* LocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableLabel.swift; sourceTree = "<group>"; };
-		C2911743238DABB700995C0E /* LocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableButton.swift; sourceTree = "<group>"; };
-		C2911745238DABBB00995C0E /* LocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableTextField.swift; sourceTree = "<group>"; };
+		C2911716238D8B5A00995C0E /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String extension.swift"; path = "RALocalize/String extension.swift"; sourceTree = SOURCE_ROOT; };
+		C2911718238D8BD500995C0E /* RALocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RALocale.swift; path = RALocalize/RALocale.swift; sourceTree = SOURCE_ROOT; };
+		C2911737238D916000995C0E /* Public properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Public properties.swift"; path = "RALocalize/Public properties.swift"; sourceTree = SOURCE_ROOT; };
+		C291173A238D9D4900995C0E /* LocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalizableLabel.swift; path = RALocalize/LocalizableLabel.swift; sourceTree = SOURCE_ROOT; };
+		C2911743238DABB700995C0E /* LocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableButton.swift; path = RALocalize/LocalizableButton.swift; sourceTree = SOURCE_ROOT; };
+		C2911745238DABBB00995C0E /* LocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableTextField.swift; path = RALocalize/LocalizableTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

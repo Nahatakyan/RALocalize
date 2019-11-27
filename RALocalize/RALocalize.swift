@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class RALocale: NSObject {
+open class RALocalize: NSObject {
 
     // MARK: - Available languages
     open class var availableLanguages: [String] {

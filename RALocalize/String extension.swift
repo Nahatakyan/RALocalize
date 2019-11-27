@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    func localized() -> String {
+    var localized: String {
         if let path = Bundle.main.path(forResource: RALocale.currentLanguageCode, ofType: "lproj"),
             let bundle = Bundle(path: path) {
             return NSLocalizedString(self, tableName: nil, bundle: bundle, comment: "")

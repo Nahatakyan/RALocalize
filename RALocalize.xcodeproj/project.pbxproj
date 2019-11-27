@@ -14,6 +14,7 @@
 		C291173B238D9D4900995C0E /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C291173A238D9D4900995C0E /* LocalizableLabel.swift */; };
 		C2911744238DABB700995C0E /* LocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911743238DABB700995C0E /* LocalizableButton.swift */; };
 		C2911746238DABBB00995C0E /* LocalizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911745238DABBB00995C0E /* LocalizableTextField.swift */; };
+		C291174A238E4EEB00995C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2911749238E4EEA00995C0E /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C291173A238D9D4900995C0E /* LocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalizableLabel.swift; path = RALocalize/LocalizableLabel.swift; sourceTree = SOURCE_ROOT; };
 		C2911743238DABB700995C0E /* LocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableButton.swift; path = RALocalize/LocalizableButton.swift; sourceTree = SOURCE_ROOT; };
 		C2911745238DABBB00995C0E /* LocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableTextField.swift; path = RALocalize/LocalizableTextField.swift; sourceTree = SOURCE_ROOT; };
+		C2911749238E4EEA00995C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C291174A238E4EEB00995C0E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				C29116E2238D858900995C0E /* RALocalize */,
 				C29116E1238D858900995C0E /* Products */,
+				C2911748238E4EEA00995C0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				C2911718238D8BD500995C0E /* RALocale.swift */,
 			);
 			path = RALocalize;
+			sourceTree = "<group>";
+		};
+		C2911748238E4EEA00995C0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2911749238E4EEA00995C0E /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

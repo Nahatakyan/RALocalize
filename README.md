@@ -10,7 +10,8 @@ Set your translation file name to 'Localizable.strings', than use '.localized()'
 # Installation
 Using cocoapod
 
-`target 'MyApp' do
+```
+target 'MyApp' do
   pod 'RALocalize'
-end`
-
+end
+```

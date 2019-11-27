@@ -16,7 +16,7 @@ open class LocalizableTextField: UITextField {
     override open var placeholder: String? {
         set {
             localizedPlaceholder = newValue
-            super.placeholder = localizedPlaceholder?.localized()
+            super.placeholder = localizedPlaceholder?.localized
         }
         get {
             return super.placeholder

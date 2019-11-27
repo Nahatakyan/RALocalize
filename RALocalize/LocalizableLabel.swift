@@ -16,7 +16,7 @@ open class LocalizableLabel: UILabel {
     override open var text: String? {
         set {
             localizableString = newValue
-            super.text = localizableString?.localized()
+            super.text = localizableString?.localized
         }
         get {
             return super.text

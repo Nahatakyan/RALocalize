@@ -56,7 +56,7 @@ private extension LocalizableButton {
         let currentState = savedState ?? "\(UIControl.State.normal.rawValue)"
         let state = UIControl.State(rawValue: UInt(currentState) ?? 0)
         let title = localizableTitles.value(forKey: currentState) as? String ?? ""
-        super.setTitle(title.localized(), for: state)
+        super.setTitle(title.localized, for: state)
     }
 }
 

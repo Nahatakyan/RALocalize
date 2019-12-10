@@ -21,7 +21,6 @@ open class RALocalize: NSObject {
 
     // MARK: - Current language code
     open class var currentLanguageCode: String? {
-        checkForLanguageChange()
         if let currentLanguage = UserDefaults.standard.string(forKey: "ra_language_code") {
             return currentLanguage
         }
@@ -51,7 +50,7 @@ open class RALocalize: NSObject {
     }
 
     // MARK: - Check for language change
-    private class func checkForLanguageChange() {
+    open class func checkForLanguageChange() {
         guard let changedLanguage = Locale.preferredLanguages.first, let currentLanguage = UserDefaults.standard.string(forKey: "ra_language_code") else { return }
         let components = Locale.components(fromIdentifier: changedLanguage)
         let languageCode = components[NSLocale.Key.languageCode.rawValue] ?? ""

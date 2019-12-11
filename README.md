@@ -1,6 +1,8 @@
 # RALocalize
 iOS realtime localization framework written on swift
 
+<p align="center"><img src="https://i.imgur.com/thMWUEo.gifv" width="208" height="427"/></p>
+
 # Features
 There are implemented LocalizableLabel, LocalizableButton and LocalizableTextField(only for placeholder) classes
 

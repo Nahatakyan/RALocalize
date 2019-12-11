@@ -50,14 +50,18 @@ To get available languages use
 RALocalize.availableLanguages
 ```
 
-To get current language code use
+To get current language use
 ```
-RALocalize.currentLanguageCode
+RALocalize.currentLanguage
 ```
 
 To change language use
 ```
 RALocalize.changeLanguage(languageCode: String)
+```
+or
+```
+RALocalize.changeLanguage(language: RALanguage)
 ```
 
 # Installation

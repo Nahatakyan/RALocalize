@@ -1,8 +1,6 @@
 # RALocalize
 iOS realtime localization framework written on swift
 
-<p align="center"><img src="https://i.imgur.com/thMWUEo.gif" width="208" height="427"/></p>
-
 # Features
 There are implemented LocalizableLabel, LocalizableButton and LocalizableTextField(only for placeholder) classes
 
@@ -35,6 +33,32 @@ To change language use
 RALocalize.changeLanguage(languageCode: String)
 ```
 
+# Example of usage
+
+<p align="center"><img src="https://i.imgur.com/thMWUEo.gif" width="208" height="427"/></p>
+
+```
+import UIKit
+import RALocalize
+
+class ViewController: UIViewController {
+
+    @IBOutlet private weak var label: LocalizableLabel!
+    @IBOutlet private weak var button: LocalizableButton!
+
+    @IBAction private func changeLanguageButtonAction(_ sender: Any) {
+        let alertController = UIAlertController(title: "change_language".localized, message: nil, preferredStyle: .actionSheet)
+
+        RALocalize.availableLanguages.forEach { language in
+            alertController.addAction(UIAlertAction(title: language.name, style: .default, handler: { (_) in
+                RALocalize.changeLanguage(language: language)
+            }))
+        }
+
+        present(alertController, animated: true, completion: nil)
+    }
+}
+```
 
 # Installation
 Using cocoapod

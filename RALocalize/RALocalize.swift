@@ -21,11 +21,11 @@ open class RALocalize: NSObject {
 
     // MARK: - Current language code
     open class var currentLanguageCode: String? {
-        if let currentLanguage = UserDefaults.standard.string(forKey: "ra_language_code") {
+        if let currentLanguage = UserDefaults.standard.string(forKey: userDefaultKey) {
             return currentLanguage
         }
         let currentLanguage = Locale.current.languageCode
-        UserDefaults.standard.set(currentLanguage, forKey: "ra_language_code")
+        UserDefaults.standard.set(currentLanguage, forKey: userDefaultKey)
         return currentLanguage
     }
 
@@ -44,18 +44,17 @@ open class RALocalize: NSObject {
         appleLanguageIdentifiers.remove(at: selectedIndex)
         appleLanguageIdentifiers.insert(languageIdentifier, at: 0)
 
-        UserDefaults.standard.set(languageCode, forKey: "ra_language_code")
+        UserDefaults.standard.set(languageCode, forKey: userDefaultKey)
         UserDefaults.standard.set(appleLanguageIdentifiers, forKey: "AppleLanguages")
         NotificationCenter.default.post(name: .ApplicationLanguageChanged, object: nil)
     }
 
     // MARK: - Check for language change
     open class func checkForLanguageChange() {
-        guard let changedLanguage = Locale.preferredLanguages.first, let currentLanguage = UserDefaults.standard.string(forKey: "ra_language_code") else { return }
+        guard let changedLanguage = Locale.preferredLanguages.first, let currentLanguage = UserDefaults.standard.string(forKey: userDefaultKey) else { return }
         let components = Locale.components(fromIdentifier: changedLanguage)
         let languageCode = components[NSLocale.Key.languageCode.rawValue] ?? ""
-        if languageCode != currentLanguage {
-            changeLanguage(languageCode: languageCode)
-        }
+        guard languageCode != currentLanguage else { return }
+        changeLanguage(languageCode: languageCode)
     }
 }

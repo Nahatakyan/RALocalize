@@ -12,19 +12,19 @@ open class LocalizableButton: UIButton {
 
     // MARK: - Properties
     private var localizableTitles = NSMutableDictionary()
-    
+
     open override var isSelected: Bool {
         didSet {
             languageChanged()
         }
     }
-    
+
     open override var isHighlighted: Bool {
         didSet {
             languageChanged()
         }
     }
-    
+
     // MARK: - Init
     override public init(frame: CGRect) {
         super.init(frame: frame)

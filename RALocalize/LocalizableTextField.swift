@@ -12,7 +12,7 @@ open class LocalizableTextField: UITextField {
 
     // MARK: - Properties
     private(set) var localizedPlaceholder: String?
-    
+
     override open var placeholder: String? {
         set {
             localizedPlaceholder = newValue
@@ -22,7 +22,7 @@ open class LocalizableTextField: UITextField {
             return super.placeholder
         }
     }
-    
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)

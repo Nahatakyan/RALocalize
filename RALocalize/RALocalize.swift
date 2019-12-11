@@ -11,27 +11,47 @@ import UIKit
 open class RALocalize: NSObject {
 
     // MARK: - Available languages
-    open class var availableLanguages: [String] {
+    open class var availableLanguages: [RALanguage] {
         var availableLanguages = Bundle.main.localizations
         if let index = availableLanguages.firstIndex(of: "Base") {
             availableLanguages.remove(at: index)
         }
-        return availableLanguages
+        return availableLanguages.map { RALanguage(code: $0) }
     }
 
     // MARK: - Current language code
-    open class var currentLanguageCode: String? {
+    open class var currentLanguage: RALanguage? {
         if let currentLanguage = UserDefaults.standard.string(forKey: userDefaultKey) {
-            return currentLanguage
+            return RALanguage(code: currentLanguage)
         }
-        let currentLanguage = Locale.current.languageCode
-        UserDefaults.standard.set(currentLanguage, forKey: userDefaultKey)
-        return currentLanguage
+        guard let currentLanguageCode = Locale.current.languageCode else { return nil }
+        UserDefaults.standard.set(currentLanguageCode, forKey: userDefaultKey)
+        return RALanguage(code: currentLanguageCode)
     }
 
     // MARK: - Change language
+    open class func changeLanguage(language: RALanguage) {
+        guard availableLanguages.contains(language), currentLanguage != language else { return }
+
+        var appleLanguageIdentifiers = Locale.preferredLanguages
+        let languageCodes = appleLanguageIdentifiers.map { identifier -> String in
+            let components = Locale.components(fromIdentifier: identifier)
+            return components[NSLocale.Key.languageCode.rawValue] ?? ""
+        }
+
+        let selectedIndex = languageCodes.firstIndex(of: language.code) ?? 0
+        let languageIdentifier = appleLanguageIdentifiers[selectedIndex]
+        appleLanguageIdentifiers.remove(at: selectedIndex)
+        appleLanguageIdentifiers.insert(languageIdentifier, at: 0)
+
+        UserDefaults.standard.set(language.code, forKey: userDefaultKey)
+        UserDefaults.standard.set(appleLanguageIdentifiers, forKey: "AppleLanguages")
+        NotificationCenter.default.post(name: .ApplicationLanguageChanged, object: nil)
+    }
+
+    // MARK: - Change language with code
     open class func changeLanguage(languageCode: String) {
-        guard availableLanguages.contains(languageCode), currentLanguageCode != languageCode else { return }
+        guard availableLanguages.contains(RALanguage(code: languageCode)), currentLanguage?.code != languageCode else { return }
 
         var appleLanguageIdentifiers = Locale.preferredLanguages
         let languageCodes = appleLanguageIdentifiers.map { identifier -> String in
@@ -58,3 +78,4 @@ open class RALocalize: NSObject {
         changeLanguage(languageCode: languageCode)
     }
 }
+

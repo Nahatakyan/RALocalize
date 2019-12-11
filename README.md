@@ -3,7 +3,7 @@ iOS realtime localization framework written on swift
 
 # Example of usage
 
-<p align="center"><img src="https://i.imgur.com/thMWUEo.gif" width="208" height="427"/></p>
+<p align="center"><img src="https://i.imgur.com/MTWpNVW.gif" width="250" height="444.66"/></p>
 
 ```
 import UIKit

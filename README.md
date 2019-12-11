@@ -5,6 +5,8 @@ iOS realtime localization framework written on swift
 There are implemented LocalizableLabel, LocalizableButton and LocalizableTextField(only for placeholder) classes
 
 # Usage
+Set your translation file name to 'Localizable.strings', than use '.localized' extension.
+
 The language of the application can be changed from the application settings (starting with iOS 13).
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -15,7 +17,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
     }
 ```
-Set your translation file name to 'Localizable.strings', than use '.localized' extension.
 
 To get available languages use
 ```

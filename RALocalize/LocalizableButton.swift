@@ -25,6 +25,12 @@ open class LocalizableButton: UIButton {
         }
     }
 
+    open override var isEnabled: Bool {
+        willSet {
+            alpha = newValue ? 1 : 0.5
+        }
+    }
+
     // MARK: - Init
     override public init(frame: CGRect) {
         super.init(frame: frame)

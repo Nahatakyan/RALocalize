@@ -24,6 +24,12 @@ open class LocalizableTextField: UITextField {
         }
     }
 
+    open override var isEnabled: Bool {
+        willSet {
+            alpha = newValue ? 1 : 0.5
+        }
+    }
+
     open var placeholderColor: UIColor = UIColor.white.withAlphaComponent(0.8)
 
     // MARK: - Init

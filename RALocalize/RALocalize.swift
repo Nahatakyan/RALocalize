@@ -51,7 +51,22 @@ open class RALocalize: NSObject {
 
     // MARK: - Change language with code
     open class func changeLanguage(languageCode: String) {
-        changeLanguage(language: RALanguage(code: languageCode))
+        guard availableLanguages.contains(RALanguage(code: languageCode)), currentLanguage?.code != languageCode else { return }
+
+        var appleLanguageIdentifiers = Locale.preferredLanguages
+        let languageCodes = appleLanguageIdentifiers.map { identifier -> String in
+            let components = Locale.components(fromIdentifier: identifier)
+            return components[NSLocale.Key.languageCode.rawValue] ?? ""
+        }
+
+        let selectedIndex = languageCodes.firstIndex(of: languageCode) ?? 0
+        let languageIdentifier = appleLanguageIdentifiers[selectedIndex]
+        appleLanguageIdentifiers.remove(at: selectedIndex)
+        appleLanguageIdentifiers.insert(languageIdentifier, at: 0)
+
+        UserDefaults.standard.set(languageCode, forKey: userDefaultKey)
+        UserDefaults.standard.set(appleLanguageIdentifiers, forKey: "AppleLanguages")
+        NotificationCenter.default.post(name: .ApplicationLanguageChanged, object: nil)
     }
 
     // MARK: - Check for language change

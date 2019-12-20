@@ -16,15 +16,18 @@ open class LocalizableTextField: UITextField {
     override open var placeholder: String? {
         set {
             localizedPlaceholder = newValue
-            super.placeholder = localizedPlaceholder?.localized
+            let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: placeholderColor]
+            self.attributedPlaceholder = NSAttributedString(string: newValue?.localized ?? "", attributes: attributes)
         }
         get {
-            return super.placeholder
+            return self.attributedPlaceholder?.string
         }
     }
 
+    open var placeholderColor: UIColor = UIColor.white.withAlphaComponent(0.8)
+
     // MARK: - Init
-    override public init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         startup()
     }

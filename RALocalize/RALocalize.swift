@@ -10,6 +10,9 @@ import UIKit
 
 open class RALocalize: NSObject {
 
+    // MARK: Default language
+    public static var defaultLanguageCode: String? = Locale.current.languageCode
+
     // MARK: - Available languages
     open class var availableLanguages: [RALanguage] {
         var availableLanguages = Bundle.main.localizations
@@ -24,7 +27,7 @@ open class RALocalize: NSObject {
         if let currentLanguage = UserDefaults.standard.string(forKey: userDefaultKey) {
             return RALanguage(code: currentLanguage)
         }
-        guard let currentLanguageCode = Locale.current.languageCode else { return nil }
+        guard let currentLanguageCode = defaultLanguageCode else { return nil }
         UserDefaults.standard.set(currentLanguageCode, forKey: userDefaultKey)
         return RALanguage(code: currentLanguageCode)
     }
@@ -51,22 +54,8 @@ open class RALocalize: NSObject {
 
     // MARK: - Change language with code
     open class func changeLanguage(languageCode: String) {
-        guard availableLanguages.contains(RALanguage(code: languageCode)), currentLanguage?.code != languageCode else { return }
-
-        var appleLanguageIdentifiers = Locale.preferredLanguages
-        let languageCodes = appleLanguageIdentifiers.map { identifier -> String in
-            let components = Locale.components(fromIdentifier: identifier)
-            return components[NSLocale.Key.languageCode.rawValue] ?? ""
-        }
-
-        let selectedIndex = languageCodes.firstIndex(of: languageCode) ?? 0
-        let languageIdentifier = appleLanguageIdentifiers[selectedIndex]
-        appleLanguageIdentifiers.remove(at: selectedIndex)
-        appleLanguageIdentifiers.insert(languageIdentifier, at: 0)
-
-        UserDefaults.standard.set(languageCode, forKey: userDefaultKey)
-        UserDefaults.standard.set(appleLanguageIdentifiers, forKey: "AppleLanguages")
-        NotificationCenter.default.post(name: .ApplicationLanguageChanged, object: nil)
+        let language = RALanguage(code: languageCode)
+        changeLanguage(language: language)
     }
 
     // MARK: - Check for language change

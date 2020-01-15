@@ -10,10 +10,12 @@ import Foundation
 
 public extension String {
     var localized: String {
-        if let path = Bundle.main.path(forResource: RALocalize.currentLanguage?.code, ofType: "lproj"),
-            let bundle = Bundle(path: path) {
-            return NSLocalizedString(self, tableName: nil, bundle: bundle, comment: "")
-        }
-        return self
+        guard let path = Bundle.main.path(forResource: RALocalize.currentLanguage?.code, ofType: "lproj"), let bundle = Bundle(path: path) else { return self }
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, comment: "")
+    }
+
+    func localize(to languageCode: String) -> String {
+        guard let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"), let bundle = Bundle(path: path) else { return self }
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, comment: "")
     }
 }

@@ -55,10 +55,16 @@ private extension RALocalizableTextField {
     }
 
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .ApplicationLanguageChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationLanguageChanged), name: .ApplicationLanguageChanged, object: nil)
     }
 
-    @objc func languageChanged() {
+    @objc func applicationLanguageChanged() {
         placeholder = localizedPlaceholder
+        languageChanged()
     }
+}
+
+// MARK: - Public methods
+extension RALocalizableTextField {
+    @objc func languageChanged() { }
 }

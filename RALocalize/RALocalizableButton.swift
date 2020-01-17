@@ -54,15 +54,16 @@ private extension RALocalizableButton {
     }
 
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .ApplicationLanguageChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationLanguageChanged), name: .ApplicationLanguageChanged, object: nil)
     }
 
-    @objc func languageChanged() {
+    @objc func applicationLanguageChanged() {
         let savedState = localizableTitles.allKeys.first { $0 as? String == "\(self.state.rawValue)" } as? String
         let currentState = savedState ?? "\(UIControl.State.normal.rawValue)"
         let state = UIControl.State(rawValue: UInt(currentState) ?? 0)
         let title = localizableTitles.value(forKey: currentState) as? String ?? ""
         super.setTitle(title.localized, for: state)
+        languageChanged()
     }
 }
 
@@ -70,6 +71,8 @@ private extension RALocalizableButton {
 extension RALocalizableButton {
     override open func setTitle(_ title: String?, for state: UIControl.State) {
         localizableTitles.setValue(title, forKey: "\(state.rawValue)")
-        languageChanged()
+        applicationLanguageChanged()
     }
+
+    @objc func languageChanged() { }
 }

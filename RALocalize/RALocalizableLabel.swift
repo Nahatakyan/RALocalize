@@ -49,10 +49,16 @@ private extension RALocalizableLabel {
     }
 
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .ApplicationLanguageChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationLanguageChanged), name: .ApplicationLanguageChanged, object: nil)
     }
 
-    @objc func languageChanged() {
+    @objc func applicationLanguageChanged() {
         text = localizableString
+        languageChanged()
     }
+}
+
+// MARK: - Public methods
+extension RALocalizableLabel {
+    @objc func languageChanged() { }
 }

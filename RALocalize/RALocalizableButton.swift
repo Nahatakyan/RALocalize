@@ -1,5 +1,5 @@
 //
-//  LocalizableButton.swift
+//  RALocalizableButton.swift
 //  RALocalize
 //
 //  Created by Ruben Nahatakyan on 11/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class LocalizableButton: UIButton {
+open class RALocalizableButton: UIButton {
 
     // MARK: - Properties
     private var localizableTitles = NSMutableDictionary()
@@ -44,7 +44,7 @@ open class LocalizableButton: UIButton {
 }
 
 // MARK: - Startup default setup
-private extension LocalizableButton {
+private extension RALocalizableButton {
     @objc func startupSetup() {
         addObservers()
 
@@ -67,7 +67,7 @@ private extension LocalizableButton {
 }
 
 // MARK: - Public methods
-extension LocalizableButton {
+extension RALocalizableButton {
     override open func setTitle(_ title: String?, for state: UIControl.State) {
         localizableTitles.setValue(title, forKey: "\(state.rawValue)")
         languageChanged()

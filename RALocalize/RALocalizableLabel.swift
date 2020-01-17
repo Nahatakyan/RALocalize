@@ -1,5 +1,5 @@
 //
-//  LocalizableLabel.swift
+//  RALocalizableLabel.swift
 //  RALocalize
 //
 //  Created by Ruben Nahatakyan on 11/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class LocalizableLabel: UILabel {
+open class RALocalizableLabel: UILabel {
 
     // MARK: - Properties
     private(set) var localizableString: String?
@@ -40,7 +40,7 @@ open class LocalizableLabel: UILabel {
 }
 
 // MARK: - Startup
-private extension LocalizableLabel {
+private extension RALocalizableLabel {
     func startup() {
         addObservers()
 

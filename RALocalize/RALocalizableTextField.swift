@@ -1,6 +1,6 @@
 //
-//  LocalizableTextField.swift
-//  LocalizationExample
+//  RALocalizableTextField.swift
+//  RALocalize
 //
 //  Created by Ruben Nahatakyan on 11/26/19.
 //  Copyright © 2019 Ruben Nahatakyan. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class LocalizableTextField: UITextField {
+open class RALocalizableTextField: UITextField {
 
     // MARK: - Properties
     private(set) var localizedPlaceholder: String?
@@ -49,7 +49,7 @@ open class LocalizableTextField: UITextField {
 }
 
 // MARK: - Startup
-private extension LocalizableTextField {
+private extension RALocalizableTextField {
     func startup() {
         addObservers()
     }

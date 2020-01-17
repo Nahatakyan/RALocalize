@@ -12,9 +12,9 @@
 		C2911717238D8B5A00995C0E /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911716238D8B5A00995C0E /* String extension.swift */; };
 		C2911719238D8BD500995C0E /* RALocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911718238D8BD500995C0E /* RALocalize.swift */; };
 		C2911738238D916000995C0E /* Public properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911737238D916000995C0E /* Public properties.swift */; };
-		C291173B238D9D4900995C0E /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C291173A238D9D4900995C0E /* LocalizableLabel.swift */; };
-		C2911744238DABB700995C0E /* LocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911743238DABB700995C0E /* LocalizableButton.swift */; };
-		C2911746238DABBB00995C0E /* LocalizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911745238DABBB00995C0E /* LocalizableTextField.swift */; };
+		C291173B238D9D4900995C0E /* RALocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C291173A238D9D4900995C0E /* RALocalizableLabel.swift */; };
+		C2911744238DABB700995C0E /* RALocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911743238DABB700995C0E /* RALocalizableButton.swift */; };
+		C2911746238DABBB00995C0E /* RALocalizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2911745238DABBB00995C0E /* RALocalizableTextField.swift */; };
 		C291174A238E4EEB00995C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2911749238E4EEA00995C0E /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +26,9 @@
 		C2911716238D8B5A00995C0E /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String extension.swift"; path = "RALocalize/String extension.swift"; sourceTree = SOURCE_ROOT; };
 		C2911718238D8BD500995C0E /* RALocalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RALocalize.swift; path = RALocalize/RALocalize.swift; sourceTree = SOURCE_ROOT; };
 		C2911737238D916000995C0E /* Public properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Public properties.swift"; path = "RALocalize/Public properties.swift"; sourceTree = SOURCE_ROOT; };
-		C291173A238D9D4900995C0E /* LocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalizableLabel.swift; path = RALocalize/LocalizableLabel.swift; sourceTree = SOURCE_ROOT; };
-		C2911743238DABB700995C0E /* LocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableButton.swift; path = RALocalize/LocalizableButton.swift; sourceTree = SOURCE_ROOT; };
-		C2911745238DABBB00995C0E /* LocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableTextField.swift; path = RALocalize/LocalizableTextField.swift; sourceTree = SOURCE_ROOT; };
+		C291173A238D9D4900995C0E /* RALocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RALocalizableLabel.swift; path = RALocalize/RALocalizableLabel.swift; sourceTree = SOURCE_ROOT; };
+		C2911743238DABB700995C0E /* RALocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RALocalizableButton.swift; path = RALocalize/RALocalizableButton.swift; sourceTree = SOURCE_ROOT; };
+		C2911745238DABBB00995C0E /* RALocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RALocalizableTextField.swift; path = RALocalize/RALocalizableTextField.swift; sourceTree = SOURCE_ROOT; };
 		C2911749238E4EEA00995C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,9 +67,9 @@
 				C29116E3238D858900995C0E /* RALocalize.h */,
 				C29116E4238D858900995C0E /* Info.plist */,
 				C2911716238D8B5A00995C0E /* String extension.swift */,
-				C291173A238D9D4900995C0E /* LocalizableLabel.swift */,
-				C2911745238DABBB00995C0E /* LocalizableTextField.swift */,
-				C2911743238DABB700995C0E /* LocalizableButton.swift */,
+				C291173A238D9D4900995C0E /* RALocalizableLabel.swift */,
+				C2911745238DABBB00995C0E /* RALocalizableTextField.swift */,
+				C2911743238DABB700995C0E /* RALocalizableButton.swift */,
 				C2911737238D916000995C0E /* Public properties.swift */,
 				C2911718238D8BD500995C0E /* RALocalize.swift */,
 				C20983AA23A0EA970054CAA0 /* RALanguage.swift */,
@@ -165,13 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2911744238DABB700995C0E /* LocalizableButton.swift in Sources */,
+				C2911744238DABB700995C0E /* RALocalizableButton.swift in Sources */,
 				C2911719238D8BD500995C0E /* RALocalize.swift in Sources */,
-				C2911746238DABBB00995C0E /* LocalizableTextField.swift in Sources */,
+				C2911746238DABBB00995C0E /* RALocalizableTextField.swift in Sources */,
 				C2911738238D916000995C0E /* Public properties.swift in Sources */,
 				C2911717238D8B5A00995C0E /* String extension.swift in Sources */,
 				C20983AB23A0EA970054CAA0 /* RALanguage.swift in Sources */,
-				C291173B238D9D4900995C0E /* LocalizableLabel.swift in Sources */,
+				C291173B238D9D4900995C0E /* RALocalizableLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +303,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KPULZ5W356;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,7 +317,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ransh.localization.RALocalize;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -333,7 +333,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KPULZ5W356;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -347,7 +347,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ransh.localization.RALocalize;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

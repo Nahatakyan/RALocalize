@@ -23,6 +23,6 @@ public struct RALanguage: Equatable {
         } else {
             languageCode = code
         }
-        self.name = Locale(identifier: languageCode).localizedString(forLanguageCode: code)?.firstUppercased
+        self.name = Locale(identifier: "en").localizedString(forLanguageCode: languageCode)?.firstUppercased
     }
 }

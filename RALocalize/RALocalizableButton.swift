@@ -74,5 +74,5 @@ extension RALocalizableButton {
         applicationLanguageChanged()
     }
 
-    @objc func languageChanged() { }
+    @objc open func languageChanged() { }
 }

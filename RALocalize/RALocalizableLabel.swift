@@ -60,5 +60,5 @@ private extension RALocalizableLabel {
 
 // MARK: - Public methods
 extension RALocalizableLabel {
-    @objc func languageChanged() { }
+    @objc open func languageChanged() { }
 }

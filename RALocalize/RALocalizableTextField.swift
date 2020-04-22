@@ -66,5 +66,5 @@ private extension RALocalizableTextField {
 
 // MARK: - Public methods
 extension RALocalizableTextField {
-    @objc func languageChanged() { }
+    @objc open func languageChanged() { }
 }

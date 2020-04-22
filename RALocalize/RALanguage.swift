@@ -20,4 +20,8 @@ public struct RALanguage: Equatable {
         let languageCode = Locale.components(fromIdentifier: code)[NSLocale.Key.languageCode.rawValue] ?? ""
         self.engName = Locale(identifier: "en").localizedString(forLanguageCode: languageCode)?.firstUppercased
     }
+
+    public static func == (lhs: RALanguage, rhs: RALanguage) -> Bool {
+        return lhs.code == rhs.code
+    }
 }

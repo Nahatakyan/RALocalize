@@ -30,7 +30,12 @@ open class RALocalizableTextField: UITextField {
         }
     }
 
-    open var placeholderColor: UIColor = UIColor.white.withAlphaComponent(0.8)
+    open var placeholderColor: UIColor = UIColor.white.withAlphaComponent(0.8) {
+        didSet {
+            let tempText = placeholder
+            placeholder = tempText
+        }
+    }
 
     // MARK: - Init
     public override init(frame: CGRect) {

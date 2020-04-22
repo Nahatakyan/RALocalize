@@ -41,6 +41,10 @@ open class RALocalizableButton: UIButton {
         super.init(coder: aDecoder)
         startupSetup()
     }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: - Startup default setup

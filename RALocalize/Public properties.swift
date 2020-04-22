@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let userDefaultKey = "ra_language_code"
+public let RALocalizeUserDefaultKey = "ra_language_code"
 
 public extension Notification.Name {
     static let ApplicationLanguageChanged = Notification.Name("application_language_changed")

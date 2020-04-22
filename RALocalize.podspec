@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
  
   spec.name         = "RALocalize"
-  spec.version      = "1.2.21"
+  spec.version      = "1.2.23”
   spec.summary      = "iOS realtime localization framework written on swift"
 
   spec.homepage     = "https://github.com/Nahatakyan/RALocalize"

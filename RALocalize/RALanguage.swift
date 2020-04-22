@@ -10,19 +10,14 @@ import UIKit
 
 public struct RALanguage: Equatable {
     public let code: String
-    public let name: String?
+    public let engName: String?
     public let nativeName: String?
 
     public init(code: String) {
         self.code = code
         self.nativeName = Locale(identifier: code).localizedString(forLanguageCode: code)?.firstUppercased
 
-        let languageCode: String
-        if let currentLanguage = Locale.preferredLanguages.first {
-            languageCode = Locale.components(fromIdentifier: currentLanguage)[NSLocale.Key.languageCode.rawValue] ?? ""
-        } else {
-            languageCode = code
-        }
-        self.name = Locale(identifier: "en").localizedString(forLanguageCode: languageCode)?.firstUppercased
+        let languageCode = Locale.components(fromIdentifier: code)[NSLocale.Key.languageCode.rawValue] ?? ""
+        self.engName = Locale(identifier: "en").localizedString(forLanguageCode: languageCode)?.firstUppercased
     }
 }

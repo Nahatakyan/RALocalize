@@ -15,13 +15,13 @@ open class RALocalizableButton: UIButton {
 
     open override var isSelected: Bool {
         didSet {
-            languageChanged()
+            applicationLanguageChanged()
         }
     }
 
     open override var isHighlighted: Bool {
         didSet {
-            languageChanged()
+            applicationLanguageChanged()
         }
     }
 

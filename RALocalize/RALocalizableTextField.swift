@@ -32,8 +32,7 @@ open class RALocalizableTextField: UITextField {
 
     open var placeholderColor: UIColor = UIColor.white.withAlphaComponent(0.8) {
         didSet {
-            let tempText = placeholder
-            placeholder = tempText
+            placeholder = localizedPlaceholder
         }
     }
 
